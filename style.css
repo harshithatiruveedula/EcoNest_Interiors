@@ -20,6 +20,8 @@ html, body {
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--ink);
   background: #fff;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 img {
@@ -35,7 +37,7 @@ img {
   margin: 0 auto;
 }
 
-/* Grids */
+/* Grid layouts */
 .grid {
   display: grid;
   gap: 24px;
@@ -61,31 +63,34 @@ img {
   color: #fff;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 1000;
+  width: 100%;
 }
 
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
+  padding: 16px 5%;
 }
 
 .brand {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
   color: #fff;
 }
 
 .site-nav {
   display: flex;
   gap: 20px;
+  transition: max-height 0.3s ease;
 }
 
 .nav-link {
   color: #e8f5e9;
   padding: 8px 10px;
   border-radius: 6px;
+  text-decoration: none;
 }
 
 .nav-link.active {
@@ -102,7 +107,8 @@ img {
   background: none;
   border: 0;
   color: #fff;
-  font-size: 22px;
+  font-size: 26px;
+  cursor: pointer;
 }
 
 /* Sections */
@@ -133,10 +139,12 @@ img {
   gap: 22px;
   align-items: center;
   padding: 8px 0;
+  width: 100%;
 }
 
 .service img:last-child {
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   height: 180px;
   object-fit: cover;
   border-radius: 10px;
@@ -148,6 +156,7 @@ img {
   color: #e8f5e9;
   padding: 40px 0;
   margin-top: 40px;
+  width: 100%;
 }
 
 .footer-grid {
@@ -156,7 +165,7 @@ img {
   gap: 20px;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 900px) {
   .grid.two,
   .grid.cards-3,
@@ -170,6 +179,7 @@ img {
 
   .service img:last-child {
     grid-column: 1 / -1;
+    margin-top: 10px;
   }
 
   .footer-grid {
@@ -184,10 +194,13 @@ img {
 
   .site-nav {
     position: absolute;
-    inset: 56px 0 auto 0;
+    top: 64px;
+    left: 0;
+    right: 0;
     background: var(--green);
     flex-direction: column;
-    padding: 12px 4%;
+    align-items: flex-start;
+    padding: 12px 5%;
     gap: 12px;
     max-height: 0;
     overflow: hidden;
@@ -197,5 +210,13 @@ img {
   .site-nav.open {
     max-height: 300px;
     pointer-events: auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 40px 0;
   }
 }
