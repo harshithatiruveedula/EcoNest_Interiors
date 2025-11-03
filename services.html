@@ -4,32 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EcoNest Interiors • Services</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="services-page">
+
   <!-- HEADER -->
   <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="img/img34.png" alt="EcoNest logo" />
-      <span>EcoNest Interiors</span>
-    </a>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="img/img34.png" alt="EcoNest logo" />
+        <span>EcoNest Interiors</span>
+      </a>
 
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
-    <nav class="site-nav" id="siteNav">
-      <a class="nav-link active" href="index.html">Home</a>
-      <a class="nav-link" href="services.html">Services</a>
-      <a class="nav-link" href="about.html">About</a>
-      <a class="nav-link cta" href="consultation.html">Book a Consultation</a>
-    </nav>
-  </div>
-</header>
-
+      <nav class="site-nav" id="siteNav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="services.html">Services</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link cta" href="consultation.html">Book a Consultation</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- MAIN CONTENT -->
   <main>
@@ -148,77 +152,47 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-  <script src="js/demo-banner.js"></script>
+  <!-- JS -->
   <script>
-  const navToggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".site-nav");
+  document.addEventListener("DOMContentLoaded", function() {
+    const navToggle = document.querySelector(".nav-toggle");
+    const siteNav = document.getElementById("siteNav");
 
-  if (navToggle && nav) {
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
+    if (!navToggle || !siteNav) return;
+
+    function setAria(open) {
+      navToggle.setAttribute("aria-expanded", !!open);
+    }
+
+    navToggle.addEventListener("click", function() {
+      const willOpen = !siteNav.classList.contains("open");
+      siteNav.classList.toggle("open", willOpen);
+      navToggle.classList.toggle("open", willOpen);
+      setAria(willOpen);
     });
-  }
-</script>
- <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const navToggle = document.querySelector(".nav-toggle");
-  const siteNav = document.getElementById("siteNav");
 
-  // defensive checks
-  if (!navToggle) {
-    console.warn("nav-toggle not found");
-    return;
-  }
-  if (!siteNav) {
-    console.warn("siteNav (#siteNav) not found");
-    return;
-  }
-
-  // Make toggle idempotent and accessible
-  function setAria(open) {
-    navToggle.setAttribute("aria-expanded", !!open);
-  }
-
-  navToggle.addEventListener("click", function (e) {
-    // toggle class on both toggle and nav
-    const willOpen = !siteNav.classList.contains("open");
-    siteNav.classList.toggle("open", willOpen);
-    navToggle.classList.toggle("open", willOpen);
-    setAria(willOpen);
-  });
-
-  // close menu when clicking outside or when a nav link clicked (mobile)
-  document.addEventListener("click", function (ev) {
-    if (!siteNav.classList.contains("open")) return;
-    const target = ev.target;
-    if (target.closest(".site-nav")) {
-      // if clicked a link inside nav, close
-      if (target.matches(".nav-link")) {
+    document.addEventListener("click", function(e) {
+      if (!siteNav.classList.contains("open")) return;
+      if (e.target.matches(".nav-link")) {
+        siteNav.classList.remove("open");
+        navToggle.classList.remove("open");
+        setAria(false);
+      } else if (!e.target.closest(".header-inner")) {
         siteNav.classList.remove("open");
         navToggle.classList.remove("open");
         setAria(false);
       }
-      return;
-    }
-    if (!target.closest(".header-inner") && !target.closest(".site-nav") && !target.closest(".nav-toggle")) {
-      siteNav.classList.remove("open");
-      navToggle.classList.remove("open");
-      setAria(false);
-    }
-  });
+    });
 
-  // optional: close on ESC key
-  document.addEventListener("keydown", function (ev) {
-    if (ev.key === "Escape" && siteNav.classList.contains("open")) {
-      siteNav.classList.remove("open");
-      navToggle.classList.remove("open");
-      setAria(false);
-    }
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape" && siteNav.classList.contains("open")) {
+        siteNav.classList.remove("open");
+        navToggle.classList.remove("open");
+        setAria(false);
+      }
+    });
   });
-});
-</script>
-
+  </script>
 
 </body>
 </html>
