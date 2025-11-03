@@ -324,52 +324,33 @@ a {
   .nav-toggle {
     display: block;
   }
-
-  /* Base navigation animation (desktop + mobile shared styles) */
+/* Nav base (desktop) */
 .site-nav {
   display: flex;
   gap: 20px;
   align-items: center;
-  transition: all 0.3s ease;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform .25s ease;
 }
 
-.nav-link {
-  color: #e8f5e9;
-  padding: 8px 10px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+/* Desktop hover animation */
+@media (min-width: 641px) {
+  .nav-link { transition: background .25s ease, transform .2s ease; }
+  .nav-link:hover { transform: translateY(-3px); background:#fff; color:var(--green); }
 }
 
-.nav-link:hover,
-.nav-link:focus-visible {
-  background: #ffffff;
-  color: var(--green);
-  transform: translateY(-2px); /* subtle lift animation */
-}
-
-.nav-link.active {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-/* Mobile navigation animation */
-/* ✅ Responsive navigation + animations */
+/* Mobile behavior */
 @media (max-width: 640px) {
-  /* Show hamburger on small screens */
-  .nav-toggle {
-    display: block;
-    background: none;
-    border: 0;
-    color: #fff;
-    font-size: 24px;
-    transition: transform 0.3s ease;
-  }
+  .nav-toggle { display: block; }
 
-  /* Rotate the ☰ when opened */
-  .nav-toggle.open {
-    transform: rotate(90deg);
-  }
-
-  /* Mobile dropdown nav */
+  /* start hidden */
   .site-nav {
     position: absolute;
     inset: 56px 0 auto 0;
@@ -383,49 +364,19 @@ a {
     opacity: 0;
     overflow: hidden;
     pointer-events: none;
-    transform: translateY(-20px);
-    transition: all 0.4s ease;
+    transform: translateY(-10px);
+    transition: max-height .35s ease, opacity .35s ease, transform .35s ease;
+    z-index: 60;
   }
 
-  /* When menu is open */
+  /* opened */
   .site-nav.open {
-    max-height: 300px;
+    max-height: 400px; /* enough room for links */
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
 
-  .nav-link {
-    display: block;
-    width: 100%;
-    color: #e8f5e9;
-    padding: 12px 14px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  }
-
-  .nav-link:hover,
-  .nav-link:focus-visible {
-    background: #ffffff;
-    color: var(--green);
-    transform: translateY(-2px); /* subtle lift animation */
-  }
-
-  .nav-link.active {
-    background: rgba(255, 255, 255, 0.15);
-  }
-}
-
-/* ✅ Desktop hover animation */
-@media (min-width: 641px) {
-  .nav-link {
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  }
-
-  .nav-link:hover,
-  .nav-link:focus-visible {
-    background: #ffffff;
-    color: var(--green);
-    transform: translateY(-3px);
-  }
+  .nav-link { display:block; width:100%; padding:12px 14px; color:#e8f5e9; border-radius:6px; }
+  .nav-toggle.open { transform: rotate(90deg); } /* icon rotation */
 }
