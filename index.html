@@ -143,34 +143,7 @@
     <script src="assets/js/demo-banner.js"></script>
   <script src="assets/js/main.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const navToggle = document.querySelector(".nav-toggle");
-  const siteNav = document.querySelector(".site-nav");
 
-  if (!navToggle || !siteNav) return;
-
-  function setAria(open) {
-    navToggle.setAttribute("aria-expanded", !!open);
-  }
-
-  navToggle.addEventListener("click", function() {
-    const willOpen = !siteNav.classList.contains("open");
-    siteNav.classList.toggle("open", willOpen);
-    navToggle.classList.toggle("open", willOpen);
-    setAria(willOpen);
-  });
-
-  document.addEventListener("click", function(e) {
-    if (!siteNav.classList.contains("open")) return;
-    if (!e.target.closest(".header-inner") && !e.target.closest(".site-nav")) {
-      siteNav.classList.remove("open");
-      navToggle.classList.remove("open");
-      setAria(false);
-    }
-  });
-});
-</script>
 
 
 
