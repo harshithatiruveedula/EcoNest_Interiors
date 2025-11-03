@@ -133,23 +133,38 @@
       </div>
     </div>
   </footer>
+    
+<script>
+  const form = document.getElementById("consultForm");
 
-  <script src="assets/js/main.js"></script>
-  <script>
-    document.getElementById("consultForm").addEventListener("submit", async function(e) {
-        e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get values (optional: just to show them in console)
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const service = form.service.value;
+
+    if (!name || !email || !phone || !service) {
+      alert("⚠️ Please fill out all required fields.");
+      return;
+    }
+
+    // Simulate submission
+    alert("✅ Your consultation request has been submitted successfully! (Demo only)");
+
+    // Reset form
+    form.reset();
+  });
+</script>
+<script src="assets/js/demo-banner.js"></script>
+
+
     
-        const formData = new FormData(this);
     
-        const response = await fetch("http://127.0.0.1:8000/submit", {
-            method: "POST",
-            body: formData
-        });
     
-        const result = await response.json();
-        alert(result.message);
-    });
-    </script>
+    
     
 </body>
 </html>

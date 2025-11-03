@@ -121,6 +121,28 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById("consultationForm").addEventListener("submit", async function(event) {
+        event.preventDefault(); // stop normal HTML form action
+    
+        const formData = new FormData(this);
+    
+        try {
+            const response = await fetch("http://127.0.0.1:8000/submit/", {
+                method: "POST",
+                body: formData
+            });
+    
+            const result = await response.json();
+            alert(result.message); // confirm success to user
+        } catch (error) {
+            alert("Error submitting form: " + error);
+        }
+    });
+    </script>
+    <script src="assets/js/demo-banner.js"></script>
+
+    
 </body>
 </html>
 
