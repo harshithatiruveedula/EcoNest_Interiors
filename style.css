@@ -46,6 +46,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 5%;
+  flex-wrap: wrap;
 }
 
 .brand-container {
@@ -92,7 +93,7 @@ html, body {
   cursor: pointer;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section {
   padding: 56px 0;
 }
@@ -101,18 +102,20 @@ html, body {
   background: var(--cream);
 }
 
-/* SERVICES */
+/* SERVICES PAGE */
 .services-list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
 }
 
 .service {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .service img:first-child {
@@ -122,11 +125,11 @@ html, body {
 }
 
 .service img:last-child {
-  flex: 1 1 300px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 320px;
   height: auto;
-  border-radius: 10px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 /* ABOUT PAGE */
@@ -135,17 +138,20 @@ html, body {
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .about-section img {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   height: auto;
   border-radius: 8px;
 }
 
 .about-text {
   flex: 1 1 300px;
+  text-align: center;
 }
 
 /* FOOTER */
@@ -186,7 +192,8 @@ html, body {
     max-height: 300px;
   }
 
-  .service, .about-section {
+  .service,
+  .about-section {
     flex-direction: column;
     text-align: center;
   }
@@ -197,5 +204,13 @@ html, body {
 
   .about-section img {
     width: 100%;
+  }
+
+  .header-inner img {
+    width: 60px;
+  }
+
+  .brand {
+    font-size: 18px;
   }
 }
