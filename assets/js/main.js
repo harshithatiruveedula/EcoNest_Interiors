@@ -133,6 +133,26 @@ if (form) {
       }
     });
   });
+  document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const siteNav = document.querySelector(".site-nav");
+
+  if (!navToggle || !siteNav) return;
+
+  navToggle.addEventListener("click", () => {
+    const open = siteNav.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", open);
+  });
+
+  // Close nav when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!siteNav.contains(e.target) && !navToggle.contains(e.target)) {
+      siteNav.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", false);
+    }
+  });
+});
+
 }
 
 
