@@ -4,16 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EcoNest Interiors • Home</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html"><img class="brand-logo" src="img/img34.png" alt="EcoNest logo"/> EcoNest Interiors</a>
+      <a class="brand" href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+        <!-- ✅ Use absolute path for GitHub Pages -->
+        <img class="brand-logo" 
+             src="https://harshithatiruveedula.github.io/EcoNest_Interiors/img/img34.png" 
+             alt="EcoNest Interiors Logo" 
+             style="height: 40px; vertical-align: middle; margin-right: 8px;" />
+        <span style="font-weight: 600; font-size: 1.2rem; color: #fff;">EcoNest Interiors</span>
+      </a>
+
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
       <nav class="site-nav" id="siteNav">
         <a class="nav-link active" href="index.html">Home</a>
         <a class="nav-link" href="services.html">Services</a>
@@ -21,9 +36,9 @@
         <a class="nav-link cta" href="consultation.html">Book a Consultation</a>
       </nav>
     </div>
-</header>
+  </header>
 
-
+  <!-- MAIN -->
   <main>
     <section class="hero">
       <div class="container grid hero-grid">
@@ -33,7 +48,7 @@
           <a class="button primary" href="consultation.html">Book a Consultation</a>
         </div>
         <div class="hero-media">
-          <img src="img/img1.jpg" alt="Hero visual" />
+          <img src="https://harshithatiruveedula.github.io/EcoNest_Interiors/img/img1.jpg" alt="Hero visual" />
         </div>
       </div>
     </section>
@@ -43,17 +58,17 @@
         <h2 class="center">Our Services</h2>
         <div class="grid cards-3">
           <article class="card">
-            <img src="img/img2.jpg" alt="Interior design consultation" />
+            <img src="https://harshithatiruveedula.github.io/EcoNest_Interiors/img/img2.jpg" alt="Interior design consultation" />
             <h3>Interior design consultation</h3>
             <p>Personalised sessions to align your home with sustainable living.</p>
           </article>
           <article class="card">
-            <img src="img/img3.jpg" alt="Custom eco-friendly furniture" />
+            <img src="https://harshithatiruveedula.github.io/EcoNest_Interiors/img/img3.jpg" alt="Custom eco-friendly furniture" />
             <h3>Custom eco-friendly furniture</h3>
             <p>Handcrafted pieces using sustainable materials and finishes.</p>
           </article>
           <article class="card">
-            <img src="img/img4.jpg" alt="Renovation with sustainable materials" />
+            <img src="https://harshithatiruveedula.github.io/EcoNest_Interiors/img/img4.jpg" alt="Renovation with sustainable materials" />
             <h3>Renovation with sustainable materials</h3>
             <p>Upgrade with eco-friendly flooring, paints, and fixtures.</p>
           </article>
@@ -66,15 +81,15 @@
         <h2 class="center">Featured Projects</h2>
         <div class="grid cards-3">
           <article class="card simple">
-            <img src="img/img5.jpg" alt="Kitchen" />
+            <img src="https://harshithatiruveedula.github.io/EcoNest_Interiors/img/img5.jpg" alt="Kitchen" />
             <h3>Kitchen</h3>
           </article>
           <article class="card simple">
-            <img src="img/img6.jpg" alt="Living Room" />
+            <img src="https://harshithatiruveedula.github.io/EcoNest_Interiors/img/img6.jpg" alt="Living Room" />
             <h3>Living Room</h3>
           </article>
           <article class="card simple">
-            <img src="img/img7.jpg" alt="Office Room" />
+            <img src="https://harshithatiruveedula.github.io/EcoNest_Interiors/img/img7.jpg" alt="Office Room" />
             <h3>Office Room</h3>
           </article>
         </div>
@@ -96,6 +111,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -121,30 +137,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-  <script>
-    document.getElementById("consultationForm").addEventListener("submit", async function(event) {
-        event.preventDefault(); // stop normal HTML form action
-    
-        const formData = new FormData(this);
-    
-        try {
-            const response = await fetch("http://127.0.0.1:8000/submit/", {
-                method: "POST",
-                body: formData
-            });
-    
-            const result = await response.json();
-            alert(result.message); // confirm success to user
-        } catch (error) {
-            alert("Error submitting form: " + error);
-        }
-    });
-    </script>
-    <script src="assets/js/demo-banner.js"></script>
-
-    
+  <!-- SCRIPTS -->
+  <script src="main.js"></script>
+  <script src="assets/js/demo-banner.js"></script>
 </body>
 </html>
-
-
