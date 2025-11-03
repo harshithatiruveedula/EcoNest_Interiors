@@ -4,28 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EcoNest Interiors • Services</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 <body class="services-page">
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="img/img34.png" alt="EcoNest logo" />
-        <span>EcoNest Interiors</span>
-      </a>
-
+      <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/img34.jpg" alt="EcoNest logo"/> EcoNest Interiors</a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-
       <nav class="site-nav" id="siteNav">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link active" href="services.html">Services</a>
@@ -35,7 +23,6 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
   <main>
     <section class="page-hero">
       <div class="container grid hero-grid">
@@ -44,7 +31,7 @@
           <p>Creating sustainable spaces tailored to your lifestyle</p>
         </div>
         <div class="hero-media">
-          <img src="img/img8.jpg" alt="Hero visual" />
+          <img src="assets/img/img8.jpg" alt="Hero visual" />
         </div>
       </div>
     </section>
@@ -54,17 +41,16 @@
         <div class="services-grid">
           <article class="service-card">
             <div class="media">
-              <img src="img/img9.jpg" alt="Interior design consultation" />
+              <img src="assets/img/img9.jpg" alt="Interior design consultation" />
             </div>
             <div class="copy">
               <h3>Interior design consultation</h3>
               <p>Personalised design sessions to align your home with sustainable living.</p>
             </div>
           </article>
-
           <article class="service-card">
             <div class="media">
-              <img src="img/img10.jpg" alt="Custom furniture" />
+              <img src="assets/img/img10.jpg" alt="Custom furniture" />
             </div>
             <div class="copy">
               <h3>Custom eco-friendly furniture</h3>
@@ -74,17 +60,16 @@
 
           <article class="service-card">
             <div class="media">
-              <img src="img/img11.jpg" alt="Renovation" />
+              <img src="assets/img/img11.jpg" alt="Renovation" />
             </div>
             <div class="copy">
               <h3>Renovation with sustainable materials</h3>
-              <p>Upgrade your home with eco-friendly flooring, paints, and fixtures.</p>
+              <p>Upgrade your home with eco‑friendly flooring, paints, and fixtures.</p>
             </div>
           </article>
-
           <article class="service-card">
             <div class="media">
-              <img src="img/img12.jpg" alt="Green spaces" />
+              <img src="assets/img/img12.jpg" alt="Green spaces" />
             </div>
             <div class="copy">
               <h3>Green spaces and indoor plants</h3>
@@ -99,22 +84,10 @@
       <div class="container why">
         <h2 class="center">Why Choose Us</h2>
         <div class="grid features-4">
-          <div class="feature">
-            <img src="img/img13.jpg" alt="Sustainable Materials" />
-            <p>Sustainable Materials</p>
-          </div>
-          <div class="feature">
-            <img src="img/img14.jpg" alt="Personalised design" />
-            <p>Personalised design approach</p>
-          </div>
-          <div class="feature">
-            <img src="img/img15.jpg" alt="Environment" />
-            <p>Environmentally responsible</p>
-          </div>
-          <div class="feature">
-            <img src="img/img16.jpg" alt="Innovative" />
-            <p>Innovative & modern interiors</p>
-          </div>
+          <div class="feature"><img src="assets/img/img13.jpg" alt="Sustainable Materials"/><p>Sustainable Materials</p></div>
+          <div class="feature"><img src="assets/img/img14.jpg" alt="Personalised design"/><p>Personalised design approach</p></div>
+          <div class="feature"><img src="assets/img/img15.jpg" alt="Environment"/><p>Environmentally responsible</p></div>
+          <div class="feature"><img src="assets/img/img16.jpg" alt="Innovative"/><p>Innovative & modern interiors</p></div>
         </div>
       </div>
     </section>
@@ -127,7 +100,6 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -152,47 +124,10 @@
     </div>
   </footer>
 
-  <!-- JS -->
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const navToggle = document.querySelector(".nav-toggle");
-    const siteNav = document.getElementById("siteNav");
-
-    if (!navToggle || !siteNav) return;
-
-    function setAria(open) {
-      navToggle.setAttribute("aria-expanded", !!open);
-    }
-
-    navToggle.addEventListener("click", function() {
-      const willOpen = !siteNav.classList.contains("open");
-      siteNav.classList.toggle("open", willOpen);
-      navToggle.classList.toggle("open", willOpen);
-      setAria(willOpen);
-    });
-
-    document.addEventListener("click", function(e) {
-      if (!siteNav.classList.contains("open")) return;
-      if (e.target.matches(".nav-link")) {
-        siteNav.classList.remove("open");
-        navToggle.classList.remove("open");
-        setAria(false);
-      } else if (!e.target.closest(".header-inner")) {
-        siteNav.classList.remove("open");
-        navToggle.classList.remove("open");
-        setAria(false);
-      }
-    });
-
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape" && siteNav.classList.contains("open")) {
-        siteNav.classList.remove("open");
-        navToggle.classList.remove("open");
-        setAria(false);
-      }
-    });
-  });
-  </script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/demo-banner.js"></script>
 
 </body>
 </html>
+
+

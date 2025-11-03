@@ -4,27 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EcoNest Interiors • About</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 <body class="about-page">
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="img/img34.png" alt="EcoNest logo" />
-        <span>EcoNest Interiors</span>
-      </a>
-
+      <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/img34.jpg" alt="EcoNest logo"/> EcoNest Interiors</a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-
       <nav class="site-nav" id="siteNav">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="services.html">Services</a>
@@ -34,9 +23,7 @@
     </div>
   </header>
 
-  <!-- MAIN -->
   <main>
-    <!-- Hero Section -->
     <section class="page-hero">
       <div class="container grid hero-grid">
         <div>
@@ -44,85 +31,67 @@
           <p>Blending design and sustainability for modern living.</p>
         </div>
         <div class="hero-media">
-          <img src="img/img33.jpg" alt="About page hero" />
+          <img src="assets/img/img33.jpg" alt="About page hero" />
         </div>
       </div>
     </section>
 
-    <!-- Our Story -->
     <section class="section alt">
       <div class="container grid two">
         <div>
           <h2>Our Story</h2>
-          <p>Founded with a mission to bring sustainable design into everyday homes, EcoNest Interiors combines aesthetics with eco-conscious solutions to create spaces that are both beautiful and responsible.</p>
+          <p>Founded with a mission to bring sustainable design into everyday homes, EcoNest Interiors combines aesthetics with eco‑conscious solutions.</p>
         </div>
         <div>
-          <img src="img/img18.jpg" alt="Our story" />
+          <img src="assets/img/img18.jpg" alt="Our story" />
         </div>
       </div>
     </section>
 
-    <!-- Mission & Vision -->
     <section class="section">
       <div class="container center">
-        <h2>Our Mission & Vision</h2>
+        <h2>Our Mission & vision</h2>
         <div class="grid two mission">
           <p>To create sustainable spaces that inspire comfort and care for the planet.</p>
-          <p>A future where eco-friendly living is part of every home.</p>
+          <p>A future where eco‑friendly living is part of every home.</p>
         </div>
       </div>
     </section>
 
-    <!-- Core Values -->
     <section class="section alt">
       <div class="container center">
-        <h2>Core Values</h2>
+        <h2>Core values</h2>
         <div class="grid values">
-          <div class="value">
-            <img src="img/img19.jpg" alt="Sustainability" />
-            <p>Sustainability</p>
-          </div>
-          <div class="value">
-            <img src="img/img20.jpg" alt="Creativity" />
-            <p>Creativity</p>
-          </div>
-          <div class="value">
-            <img src="img/img21.jpg" alt="Comfort" />
-            <p>Comfort</p>
-          </div>
-          <div class="value">
-            <img src="img/img22.jpg" alt="Responsibility" />
-            <p>Responsibility</p>
-          </div>
+          <div class="value"><img src="assets/img/img19.jpg" alt="Sustainability"/><p>Sustainability</p></div>
+          <div class="value"><img src="assets/img/img20.jpg" alt="Creativity"/><p>Creativity</p></div>
+          <div class="value"><img src="assets/img/img21.jpg" alt="Comfort"/><p>Comfort</p></div>
+          <div class="value"><img src="assets/img/img22.jpg" alt="Responsibility"/><p>Responsibility</p></div>
         </div>
       </div>
     </section>
 
-    <!-- Team Section -->
     <section class="section team">
       <div class="container">
-        <h2>Meet the Team</h2>
+        <h2>Meet the team</h2>
         <div class="grid team-grid">
           <div class="member">
-            <img src="img/img23.jpg" alt="Team member 1" />
+            <img src="assets/img/img23.jpg" alt="Team member" />
           </div>
           <div class="member">
-            <img src="img/img24.jpg" alt="Team member 2" />
+            <img src="assets/img/img24.jpg" alt="Team member" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-band section">
+    <section class="cta-bar">
       <div class="container center">
-        <h2>Ready to transform your home sustainably?</h2>
+        <p>Ready to transform your home sustainably?</p>
         <a class="button primary" href="consultation.html">Book a Consultation</a>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -135,9 +104,6 @@
         <h5><a href="services.html">Services</a></h5>
       </div>
       <div>
-        <h5><a href="about.html">About</a></h5>
-      </div>
-      <div>
         <h5>Contact</h5>
         <ul>
           <li>Email: <a href="mailto:harshithatiruveedula@gmail.com">harshithatiruveedula@gmail.com</a></li>
@@ -148,47 +114,10 @@
     </div>
   </footer>
 
-  <!-- JS -->
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const navToggle = document.querySelector(".nav-toggle");
-    const siteNav = document.getElementById("siteNav");
-
-    if (!navToggle || !siteNav) return;
-
-    function setAria(open) {
-      navToggle.setAttribute("aria-expanded", !!open);
-    }
-
-    navToggle.addEventListener("click", function() {
-      const willOpen = !siteNav.classList.contains("open");
-      siteNav.classList.toggle("open", willOpen);
-      navToggle.classList.toggle("open", willOpen);
-      setAria(willOpen);
-    });
-
-    document.addEventListener("click", function(e) {
-      if (!siteNav.classList.contains("open")) return;
-      if (e.target.matches(".nav-link")) {
-        siteNav.classList.remove("open");
-        navToggle.classList.remove("open");
-        setAria(false);
-      } else if (!e.target.closest(".header-inner")) {
-        siteNav.classList.remove("open");
-        navToggle.classList.remove("open");
-        setAria(false);
-      }
-    });
-
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape" && siteNav.classList.contains("open")) {
-        siteNav.classList.remove("open");
-        navToggle.classList.remove("open");
-        setAria(false);
-      }
-    });
-  });
-  </script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/demo-banner.js"></script>
 
 </body>
 </html>
+
+

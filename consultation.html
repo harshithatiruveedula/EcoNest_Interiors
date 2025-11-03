@@ -4,91 +4,73 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EcoNest Interiors • Book a Consultation</title>
-
-  <!-- Fonts and Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
-<body class="consultation-page">
-  <!-- HEADER -->
+<body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="img/img34.png" alt="EcoNest logo" />
-        <span>EcoNest Interiors</span>
-      </a>
-
+      <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/img34.jpg" alt="EcoNest logo"/> EcoNest Interiors</a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-
       <nav class="site-nav" id="siteNav">
-        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="services.html">Services</a>
         <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link cta" href="consultation.html">Book a Consultation</a>
+        <a class="nav-link cta active" href="consultation.html">Book a Consultation</a>
       </nav>
     </div>
   </header>
 
-  <!-- MAIN -->
   <main>
-    <!-- Hero Section -->
     <section class="page-hero">
       <div class="container grid hero-grid">
         <div>
           <h1>Book a Consultation</h1>
-          <p>Let’s bring your eco-friendly dream home to life.</p>
+          <p>Let’s bring your eco‑friendly dream home to your life.</p>
         </div>
         <div class="hero-media">
-          <img src="img/img35.jpg" alt="Consultation hero" />
+          <img src="assets/img/img35.jpg" alt="Consultation hero" />
         </div>
       </div>
     </section>
 
-    <!-- Form Section -->
     <section class="section">
       <div class="container">
         <h2 class="center">Book a Consultation</h2>
-        <p class="center muted">We’ll help you design your dream eco-friendly home with expert guidance.</p>
-
+        <p class="center muted">Let’s bring your eco‑friendly dream home to your life.</p>
         <form class="grid form" id="consultForm" novalidate>
           <div class="form-field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" required />
             <small class="error-message" aria-live="polite"></small>
           </div>
-
           <div class="form-field">
             <label for="email">Email</label>
             <input id="email" name="email" type="email" required />
             <small class="error-message" aria-live="polite"></small>
           </div>
-
           <div class="form-field">
             <label for="phone">Contact</label>
             <input id="phone" name="phone" type="tel" required />
             <small class="error-message" aria-live="polite"></small>
           </div>
-
           <div class="form-field">
             <label for="date">Preferred Date</label>
             <input id="date" name="date" type="date" />
           </div>
-
           <div class="form-field full">
             <label for="service">Preferred Service</label>
             <select id="service" name="service" required>
-              <option value="">Select a Service</option>
+              <option value="">Preferred Service</option>
               <option>Interior design consultation</option>
-              <option>Custom eco-friendly furniture</option>
+              <option>Custom eco‑friendly furniture</option>
               <option>Renovation with sustainable materials</option>
               <option>Green spaces and indoor plants</option>
             </select>
             <small class="error-message" aria-live="polite"></small>
           </div>
-
           <div class="form-actions full center">
             <button class="button primary" type="submit">Book a Consultation</button>
           </div>
@@ -96,63 +78,38 @@
       </div>
     </section>
 
-    <!-- Why Choose Us -->
     <section class="section alt">
       <div class="container why">
         <h2 class="center">Why Book With Us</h2>
         <div class="grid features-2">
-          <div class="feature row">
-            <img src="img/img26.jpg" alt="Experts" />
-            <p>Sustainable design experts</p>
-          </div>
-          <div class="feature row">
-            <img src="img/img27.jpg" alt="Guidance" />
-            <p>Professional guidance</p>
-          </div>
-          <div class="feature row">
-            <img src="img/img28.jpg" alt="Hassle-free" />
-            <p>Hassle-free virtual or in-person meetings</p>
-          </div>
-          <div class="feature row">
-            <img src="img/img29.jpg" alt="Flexible" />
-            <p>Flexible scheduling</p>
-          </div>
+          <div class="feature row"><img src="assets/img/img26.jpg" alt="Experts"/><p>Sustainable design experts</p></div>
+          <div class="feature row"><img src="assets/img/img27.jpg" alt="Guidance"/><p>Professional guidance</p></div>
+          <div class="feature row"><img src="assets/img/img28.jpg" alt="Hassle free"/><p>Hassle‑free virtual or in‑person meetings</p></div>
+          <div class="feature row"><img src="assets/img/img29.jpg" alt="Meet"/><p>Flexible scheduling</p></div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Info -->
     <section class="section contact-cards">
       <div class="container grid two">
         <div>
-          <h3 class="contact-heading">
-            <img class="inline-icon" src="img/img30.jpg" alt="Phone" /> Contact
-          </h3>
+          <h3 class="contact-heading"><img class="inline-icon" src="assets/img/img30.jpg" alt="Phone"/> Contact</h3>
           <p><a href="tel:+916301739482">+91 6301739482</a></p>
         </div>
         <div>
-          <p>
-            <img class="inline-icon" src="img/img31.jpg" alt="Email" />
-            <a href="mailto:harshithatiruveedula@gmail.com">harshithatiruveedula@gmail.com</a>
-          </p>
-          <p>
-            <img class="inline-icon" src="img/img32.jpg" alt="Location" />
-            Krishna Nagar, Kurnool.
-          </p>
+          <p><img class="inline-icon" src="assets/img/img31.jpg" alt="Email"/> <a href="mailto:harshithatiruveedula@gmail.com">harshithatiruveedula@gmail.com</a></p>
+          <p><img class="inline-icon" src="assets/img/img32.jpg" alt="Location"/> Krishna Nagar, Kurnool.</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-band section">
+    <section class="cta-bar">
       <div class="container center">
-        <h2>Transform your home with EcoNest Interiors</h2>
-        <p>Book your free consultation today and start your eco-friendly journey!</p>
+        <p>“Transform your home with EcoNest Interiors – Book your free consultation today!”</p>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -172,68 +129,44 @@
         <ul>
           <li>Email: <a href="mailto:harshithatiruveedula@gmail.com">harshithatiruveedula@gmail.com</a></li>
           <li>Phone: <a href="tel:+916301739482">+91 6301739482</a></li>
-          <li>Address: Krishna Nagar, Kurnool.</li>
         </ul>
       </div>
     </div>
   </footer>
+    
+<script>
+  const form = document.getElementById("consultForm");
 
-  <!-- JS Scripts -->
-  <script>
-    // FORM HANDLER
-    const form = document.getElementById("consultForm");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const { name, email, phone, service } = form;
-      if (!name.value.trim() || !email.value.trim() || !phone.value.trim() || !service.value) {
-        alert("⚠️ Please fill out all required fields.");
-        return;
-      }
-      alert("✅ Your consultation request has been submitted successfully! (Demo only)");
-      form.reset();
-    });
-  </script>
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  <!-- NAV TOGGLE -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const navToggle = document.querySelector(".nav-toggle");
-      const siteNav = document.getElementById("siteNav");
+    // Get values (optional: just to show them in console)
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const service = form.service.value;
 
-      if (!navToggle || !siteNav) return;
+    if (!name || !email || !phone || !service) {
+      alert("⚠️ Please fill out all required fields.");
+      return;
+    }
 
-      function setAria(open) {
-        navToggle.setAttribute("aria-expanded", open);
-      }
+    // Simulate submission
+    alert("✅ Your consultation request has been submitted successfully! (Demo only)");
 
-      navToggle.addEventListener("click", () => {
-        const open = !siteNav.classList.contains("open");
-        siteNav.classList.toggle("open", open);
-        navToggle.classList.toggle("open", open);
-        setAria(open);
-      });
+    // Reset form
+    form.reset();
+  });
+</script>
+<script src="assets/js/demo-banner.js"></script>
 
-      // Close menu on outside click
-      document.addEventListener("click", (e) => {
-        if (!siteNav.classList.contains("open")) return;
-        if (!e.target.closest(".site-nav") && !e.target.closest(".nav-toggle")) {
-          siteNav.classList.remove("open");
-          navToggle.classList.remove("open");
-          setAria(false);
-        }
-      });
 
-      // Close menu on ESC
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && siteNav.classList.contains("open")) {
-          siteNav.classList.remove("open");
-          navToggle.classList.remove("open");
-          setAria(false);
-        }
-      });
-    });
-  </script>
-
-  <script src="js/demo-banner.js"></script>
+    
+    
+    
+    
+    
 </body>
 </html>
+
+
