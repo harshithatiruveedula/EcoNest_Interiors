@@ -116,6 +116,17 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/demo-banner.js"></script>
+  <script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('open');
+    });
+  }
+</script>
+
 
 </body>
 </html>
