@@ -16,31 +16,30 @@
 
 <body>
   <!-- HEADER -->
- <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="img/img34.png" alt="EcoNest logo" />
-      <span>EcoNest Interiors</span>
-    </a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="img/img34.png" alt="EcoNest logo" />
+        <span>EcoNest Interiors</span>
+      </a>
 
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
-    <nav class="site-nav" id="siteNav">
-      <a class="nav-link active" href="index.html">Home</a>
-      <a class="nav-link" href="services.html">Services</a>
-      <a class="nav-link" href="about.html">About</a>
-      <a class="nav-link cta" href="consultation.html">Book a Consultation</a>
-    </nav>
-  </div>
-</header>
-
+      <nav class="site-nav" id="siteNav">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link cta" href="consultation.html">Book a Consultation</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- MAIN -->
   <main>
     <section class="hero">
       <div class="container grid hero-grid">
         <div class="hero-copy">
-          <h1>Design a<br/>Greener Home</h1>
+          <h1>Design a<br />Greener Home</h1>
           <p>Eco-friendly interior design and sustainable living solutions</p>
           <a class="button primary" href="consultation.html">Book a Consultation</a>
         </div>
@@ -134,67 +133,35 @@
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script src="main.js"></script>
-  <script src="js/demo-banner.js"></script>
+  <!-- ✅ JS for Mobile Menu -->
   <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const navToggle = document.querySelector(".nav-toggle");
-  const siteNav = document.getElementById("siteNav");
+    document.addEventListener("DOMContentLoaded", () => {
+      const navToggle = document.querySelector(".nav-toggle");
+      const siteNav = document.getElementById("siteNav");
 
-  // defensive checks
-  if (!navToggle) {
-    console.warn("nav-toggle not found");
-    return;
-  }
-  if (!siteNav) {
-    console.warn("siteNav (#siteNav) not found");
-    return;
-  }
+      if (!navToggle || !siteNav) return;
 
-  // Make toggle idempotent and accessible
-  function setAria(open) {
-    navToggle.setAttribute("aria-expanded", !!open);
-  }
-
-  navToggle.addEventListener("click", function (e) {
-    // toggle class on both toggle and nav
-    const willOpen = !siteNav.classList.contains("open");
-    siteNav.classList.toggle("open", willOpen);
-    navToggle.classList.toggle("open", willOpen);
-    setAria(willOpen);
-  });
-
-  // close menu when clicking outside or when a nav link clicked (mobile)
-  document.addEventListener("click", function (ev) {
-    if (!siteNav.classList.contains("open")) return;
-    const target = ev.target;
-    if (target.closest(".site-nav")) {
-      // if clicked a link inside nav, close
-      if (target.matches(".nav-link")) {
-        siteNav.classList.remove("open");
-        navToggle.classList.remove("open");
-        setAria(false);
+      function setAria(open) {
+        navToggle.setAttribute("aria-expanded", !!open);
       }
-      return;
-    }
-    if (!target.closest(".header-inner") && !target.closest(".site-nav") && !target.closest(".nav-toggle")) {
-      siteNav.classList.remove("open");
-      navToggle.classList.remove("open");
-      setAria(false);
-    }
-  });
 
-  // optional: close on ESC key
-  document.addEventListener("keydown", function (ev) {
-    if (ev.key === "Escape" && siteNav.classList.contains("open")) {
-      siteNav.classList.remove("open");
-      navToggle.classList.remove("open");
-      setAria(false);
-    }
-  });
-});
-</script>
+      navToggle.addEventListener("click", () => {
+        const willOpen = !siteNav.classList.contains("open");
+        siteNav.classList.toggle("open", willOpen);
+        navToggle.classList.toggle("open", willOpen);
+        setAria(willOpen);
+      });
+
+      // Close menu on link click
+      siteNav.addEventListener("click", (e) => {
+        if (e.target.classList.contains("nav-link")) {
+          siteNav.classList.remove("open");
+          navToggle.classList.remove("open");
+          setAria(false);
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
