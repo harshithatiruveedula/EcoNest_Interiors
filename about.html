@@ -8,6 +8,63 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+<style>
+  /* Fix layout for mobile devices */
+  @media (max-width: 900px) {
+    .grid.two, .grid.team-grid, .grid.values {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .page-hero .grid {
+      grid-template-columns: 1fr;
+    }
+    .page-hero img {
+      width: 100%;
+      height: auto;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Adjust spacing */
+  .section {
+    padding: 40px 16px;
+  }
+
+  .page-hero {
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .cta-bar {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .cta-bar .button {
+    display: inline-block;
+    margin-top: 10px;
+  }
+</style>
+</head>
+
 </head>
 <body class="about-page">
   <header class="site-header">
