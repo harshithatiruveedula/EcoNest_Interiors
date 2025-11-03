@@ -156,16 +156,65 @@
     });
   }
 </script>
-  <script>
-  // Navigation toggle
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
   const navToggle = document.querySelector(".nav-toggle");
   const siteNav = document.getElementById("siteNav");
 
-  navToggle.addEventListener("click", () => {
-    siteNav.classList.toggle("open");
-    navToggle.classList.toggle("open");
+  // defensive checks
+  if (!navToggle) {
+    console.warn("nav-toggle not found");
+    return;
+  }
+  if (!siteNav) {
+    console.warn("siteNav (#siteNav) not found");
+    return;
+  }
+
+  // Make toggle idempotent and accessible
+  function setAria(open) {
+    navToggle.setAttribute("aria-expanded", !!open);
+  }
+
+  navToggle.addEventListener("click", function (e) {
+    // toggle class on both toggle and nav
+    const willOpen = !siteNav.classList.contains("open");
+    siteNav.classList.toggle("open", willOpen);
+    navToggle.classList.toggle("open", willOpen);
+    setAria(willOpen);
   });
+
+  // close menu when clicking outside or when a nav link clicked (mobile)
+  document.addEventListener("click", function (ev) {
+    if (!siteNav.classList.contains("open")) return;
+    const target = ev.target;
+    if (target.closest(".site-nav")) {
+      // if clicked a link inside nav, close
+      if (target.matches(".nav-link")) {
+        siteNav.classList.remove("open");
+        navToggle.classList.remove("open");
+        setAria(false);
+      }
+      return;
+    }
+    if (!target.closest(".header-inner") && !target.closest(".site-nav") && !target.closest(".nav-toggle")) {
+      siteNav.classList.remove("open");
+      navToggle.classList.remove("open");
+      setAria(false);
+    }
+  });
+
+  // optional: close on ESC key
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && siteNav.classList.contains("open")) {
+      siteNav.classList.remove("open");
+      navToggle.classList.remove("open");
+      setAria(false);
+    }
+  });
+});
 </script>
+
 
 </body>
 </html>
