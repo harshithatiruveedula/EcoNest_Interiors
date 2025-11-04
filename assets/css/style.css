@@ -1,6 +1,6 @@
 :root{--green:#2e7d32;--green-700:#1e5a22;--green-bright:#43a047;--cream:#f6e6d7;--pink:#fde7ef;--ink:#111827;--muted:#6b7280;--white:#ffffff}
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff}
+html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
 html{scroll-behavior:smooth}
 img{max-width:100%;display:block;border-radius:8px}
 a{color:inherit;text-decoration:none}
@@ -123,6 +123,7 @@ a{color:inherit;text-decoration:none}
   .about-page .values{grid-template-columns:repeat(2,1fr)}
   /* Fix About section two-column block on mobile */
   .about-page .section.alt .grid.two{grid-template-columns:1fr}
+  .about-page .hero-grid{grid-template-columns:1fr}
   .about-page .page-hero img{max-width:100%;height:auto}
   /* Collapse header nav earlier so it doesn't overflow */
   .nav-toggle{display:block}
