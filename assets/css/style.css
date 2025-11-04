@@ -113,50 +113,33 @@ a{color:inherit;text-decoration:none}
 .about-page .value p{margin:10px 0 0;font-weight:600}
 .about-page .team-grid{grid-template-columns:repeat(2,180px);gap:40px;justify-content:center}
 
-/* === Mobile Fix for Services & About Pages === */
-@media (max-width: 900px) {
-  .grid.two,
-  .grid.features-4,
-  .services-grid,
-  .team-grid,
-  .values {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    text-align: center;
-  }
-
-  .page-hero .grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .page-hero img,
-  .service-card img,
-  .section img,
-  .value img,
-  .member img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .section {
-    padding: 40px 16px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-band,
-  .cta-bar {
-    text-align: center;
-  }
-}   
+/* Responsive */
+@media (max-width: 900px){
+  .grid.two,.grid.cards-3,.grid.features-4,.grid.hero-grid,.team-grid{grid-template-columns:1fr}
+  .service{grid-template-columns:60px 1fr;}
+  .service img:last-child{grid-column:1/-1}
+  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  /* Make about values grid adapt at tablet */
+  .about-page .values{grid-template-columns:repeat(2,1fr)}
+  /* Collapse header nav earlier so it doesn't overflow */
+  .nav-toggle{display:block}
+  .site-nav{position:absolute;inset:56px 0 auto 0;background:var(--green);padding:12px 4%;display:none;flex-direction:column;gap:12px}
+  .site-nav.open{display:flex}
+  .nav-link{padding:12px 14px}
+  /* Slightly reduce brand size to fit */
+  .brand{font-size:18px}
+  .brand-logo{height:1.6em}
+  /* Make media fluid earlier */
+  .service-card{grid-template-columns:1fr}
+  .service-card .media img{width:100%;height:auto}
+  .services-preview .card img,.featured .card img{width:100%;height:auto}
+}
+@media (max-width: 640px){
+  .form{grid-template-columns:1fr}
+}
+@media (max-width: 480px){
+  .footer-grid{grid-template-columns:1fr}
+  .button{width:100%}
+  /* Stack values to single column on very small screens */
+  .about-page .values{grid-template-columns:1fr}
+}
