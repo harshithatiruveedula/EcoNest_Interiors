@@ -318,62 +318,59 @@ a {
   margin-top: 22px;
 }
 
-/* === UNIVERSAL MOBILE FIX === */
+/* === UNIVERSAL MOBILE FIX (Improved) === */
 @media (max-width: 900px) {
-  html,
-  body {
+  html, body {
     overflow-x: hidden;
   }
 
+  /* Make grids stack */
   .grid.two,
   .grid.features-4,
   .services-grid,
   .team-grid,
   .values {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 28px;
     text-align: center;
   }
 
-  .page-hero .grid {
+  /* Keep images centered and scaled */
+  .page-hero .grid,
+  .section .grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    justify-items: center;
   }
 
   img,
   .service-card img,
-  .section img,
   .value img,
   .member img {
-    width: 100%;
+    width: 90%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
+    margin: 0 auto;
   }
 
-  .service,
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
+  /* Centered content */
   .section {
-    padding: 40px 16px;
+    padding: 40px 20px;
   }
 
   .container {
-    width: 94%;
+    width: 95%;
   }
 
-  /* Mobile nav fix */
+  /* --- MOBILE NAVIGATION --- */
   .nav-toggle {
     display: block;
     background: none;
     border: 0;
-    font-size: 26px;
+    font-size: 28px;
+    color: #fff;
     cursor: pointer;
+    z-index: 100;
   }
 
   .site-nav {
@@ -384,7 +381,7 @@ a {
     background: var(--green);
     flex-direction: column;
     align-items: flex-start;
-    padding: 12px 5%;
+    padding: 16px 5%;
     gap: 12px;
     max-height: 0;
     overflow: hidden;
@@ -393,7 +390,7 @@ a {
   }
 
   .site-nav.open {
-    max-height: 320px;
+    max-height: 300px;
     pointer-events: auto;
   }
 
